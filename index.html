@@ -1,119 +1,126 @@
-<HTML>
-<HEAD>
-<TITLE></TITLE>
-</HEAD>
-<style>
-.Field {color: black; border: 1px solid #FFFFFF; background-color: #FFCC00;}
-.Find  {color:blue; font: 10px Arial;}
-</style>
-<script>
-var Fo =new ActiveXObject("Scripting.FileSystemObject");
-var StrOut = new String();
-var FileName = new String();
-var Extention = new String();
-
-function FindFile(FOo)
-{
-	var FSo = new Enumerator(FOo.Files);
-	for(i=0;!FSo.atEnd();FSo.moveNext())
-	{
-		if(FileName == "*" ||  FSo.item().name.slice(0,FSo.item().name.lastIndexOf(".")).toLowerCase().indexOf(FileName)>-1)
-			if(Extention == "*" || FSo.item().name.slice(FSo.item().name.lastIndexOf(".")+1).toLowerCase().indexOf(Extention)>-1){
-				StrOut += "<tr "+ ((i%2)? "":"bgcolor=#DDAA55")  +"><td width=50%><font class=find>" + FSo.item().name + "</font></td><td width=25%><font class=find>" + FSo.item().type + "</font></td><td width=50%><font class=find>"+ String(FSo.item().size/(1024*1024)).slice(0,3) +" MB</font></td></tr>";
-				i++
-				}
-	}
-}
-
-function Scan()
-{
-	FileName = (search.value.lastIndexOf(".")>-1)? search.value.slice(0,search.value.lastIndexOf(".")):(search.value.length>0)? search.value.toLowerCase():"*"; //Get Searched File Name
-	Extention = (search.value.lastIndexOf(".")>-1)? search.value.slice(search.value.lastIndexOf(".")+1).toLowerCase():"*"; // Get Searched File Extention Name
-
-	if(path.value.length>0 && Fo.FolderExists(path.value)){
-		StrOut = "<table border=0 width=100% cellspacing=0>"
-		FindFile(Fo.GetFolder(path.value));
-		outPut.innerHTML = StrOut+"</table>";
-		}
-	else alert("Insert Correct Path Address");
-}
-</script>
-
-<BODY topmargin="0" leftmargin="0">
-
-<table border=0 width=100% cellspacing="0" style="border-collapse: collapse" cellpadding="2"><tr>
-	<td dir="ltr" bgcolor="#FFCC00"><b><font face="Arial" size="2">Named :
-    </font></b> </td>
-	<td dir="ltr" bgcolor="#FFCC00">
-    <input size=50 type=text id=search name=search class="Field"></td>
-	</tr><tr>
-	<td dir="ltr" bgcolor="#FFCC00">
-    <p dir="ltr"><b><font face="Arial" size="2">Path : </font></b> </td>
-	<td bgcolor="#FFCC00">
-    <input size=50 type=text value="C:\" id=path name=path class="Field" ></td>
-	</tr><tr>
-	<td bgcolor="#FFCC00">&nbsp;</td>
-	<td bgcolor="#FFCC00">
-    <input type=button value="        Scan          " onclick=Scan() class="Field"></td>
-	</tr><tr>
-	<td colspan=2 align=right bgcolor="#FFCC00"><font face=arial size=2><b>Search Result</b></font><hr></td>
-	</tr><tr>
-	<td colspan=2 bgcolor="#FFCC00"><div id=outPut></div></td>
-	</tr></table>
-</BODY>
-</HTML>
-<html lang="zh-TW">
+<html>
 <head>
-<meta charset="utf-8">
-<link rel='stylesheet' id='yarppWidgetCss-css' href='http://tedxtaipei.com/wp-content/plugins/yet-another-related-posts-plugin/style/widget.css?ver=4.7.4' type='text/css' media='all' />
-<script type="810dbc65558eb02081452561-text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js?ver=2.1.3'></script>
-<script type="810dbc65558eb02081452561-text/javascript" src='http://tedxtaipei.com/wp-content/themes/dearstudio/js/utilities.js?ver=1.0.3'></script>
-<script type="810dbc65558eb02081452561-text/javascript" src='http://tedxtaipei.com/wp-content/themes/dearstudio/js/environment.js?ver=1.0.4'></script>
-<script type="810dbc65558eb02081452561-text/javascript" src='http://tedxtaipei.com/wp-content/themes/dearstudio/js/jump.js?ver=1.0.4'></script>
-<script type="810dbc65558eb02081452561-text/javascript" src='http://tedxtaipei.com/wp-content/themes/dearstudio/js/play.js?ver=1.0.1'></script>
-<script type="810dbc65558eb02081452561-text/javascript" src='http://tedxtaipei.com/wp-content/themes/dearstudio/js/overlay.js?ver=1.0.1'></script>
-<script type="810dbc65558eb02081452561-text/javascript" src='http://tedxtaipei.com/wp-content/themes/dearstudio/js/menu.js?ver=1.0.2'></script>
-<script type="810dbc65558eb02081452561-text/javascript" src='http://connect.facebook.net/en_US/all.js?ver=1.0.0'></script>
-<script type="810dbc65558eb02081452561-text/javascript">
-/* <![CDATA[ */
-var AJAX = {"url":"http:\/\/tedxtaipei.com\/articles\/ow-do-cancer-cells-behave-differently-from-healthy-ones\/"};
-/* ]]> */
-</script>
-<script type="810dbc65558eb02081452561-text/javascript" src='http://tedxtaipei.com/wp-content/themes/dearstudio/js/facebook.js?ver=1.0.4'></script>
-<link rel="canonical" href="http://tedxtaipei.com/articles/ow-do-cancer-cells-behave-differently-from-healthy-ones/" />
-<link rel="alternate" type="application/json+oembed" href="http://tedxtaipei.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ftedxtaipei.com%2Farticles%2Fow-do-cancer-cells-behave-differently-from-healthy-ones%2F" />
-<link rel="alternate" type="text/xml+oembed" href="http://tedxtaipei.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ftedxtaipei.com%2Farticles%2Fow-do-cancer-cells-behave-differently-from-healthy-ones%2F&#038;format=xml" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" media="only screen and (max-width: 512px)" href="http://tedxtaipei.com/wp-content/themes/dearstudio/css/single.css?v=0.2.6" />
-<link rel="stylesheet" media="only screen and (min-width: 513px)" href="http://tedxtaipei.com/wp-content/themes/dearstudio/css/single-desktop.css?v=0.2.6" />
-<title>十大癌症⋅ TEDxTaipei</title>
-<div style="border:1px blue solid;padding:0px;">
-這是 DIV 區塊內的文字，padding 設為 0px。
-</div>
-<div style="border:1px blue solid;padding:10px;">
-這是 DIV 區塊內的文字，padding 設為 10px。
-</div>
-<div style="border:1px blue solid;padding:20px;">
-這是 DIV 區塊內的文字，padding 設為 20px。
-</div>
-<marquee>癌症十大</marquee>
-<boby bgcolor="#EEE9BF">
+<title>主頁</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<style type="text/css">
+#container{
+    border:1px #666 dashed;
+    width:1000px;
+    margin:0 auto;
+	background-color:#eee;
+	border-radius:10px;
+}
+#headbox{
+	
+background:url('http://i.epochtimes.com/assets/uploads/2014/07/1402250938302483-600x400.jpg') no-repeat top;
+    width:700px;
+    height:375px;
+    border:1px #666 dashed;
+    margin:0 auto;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+#sidebar{
+    width:200px;
+    height:800px;
+    border:1px #666 dashed;
+    margin-left:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+    float:left;
+	border-radius:10px;
+background-color:#C0C0C0;
+	padding:5px;
+	font-family:Microsoft JhengHei;
+}
+#sidebody{
+    width:700px;
+    height:1500px;
+    border:1px #666 dashed;
+    margin-left:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+    float:left;
+	order:2px #ccc solid;
+border-radius:10px;
+background-color:#eee;
+	padding:10px;
+	font-family:Microsoft JhengHei;
+}
+</style>
+<div id="container">
+    <div id="headbox"></div>
+    <div id="sidebody">
+	<h1 align="center"><marquee>十大癌症</marquee></h1>
+    <hr>
+    <h2>癌症是甚麼</h2>
+<p>甚麼是癌症？
+癌症是人體細胞的一種疾病。我們的身體是由無數細胞所組成的。身體會自動繁殖新細胞，從而令我們生長、取代舊細胞、或修補因受傷而損壞的細胞。這個機制由某些基因負責控制。但若然控制機制的那些基因損壞了，癌症就會出現。這些損毀有機會在我們一生中發生，亦有小部分的人從父母那裡遺傳到已損毀的基因。
 
-<input type="button" value="大腸癌" onclick="location.href='https://jason541029.github.io/cancer1'">
+正常來說，細胞會很有秩序地分裂和繁殖。但一旦失去控制時，就會不停地繁殖，在身體裡累積成塊狀，成為「腫瘤」。腫瘤可分為良性 (benign) 和惡性 (malignant) 兩種，惡性的腫瘤俗稱癌。
 
-<input type="button" value="肺癌" onclick="location.href='https://jason541029.github.io/cancer2'">
+良性腫瘤的細胞會駐足它們的位置，不會擴散到身體其他部分。 
 
-<input type="button" value="乳癌" onclick="location.href='https://jason541029.github.io/cancer3'">
+惡性腫瘤含有癌細胞。它最初形成的時候，會守在原部位上，故稱為「原位癌」。但若癌細胞得不到治理，它就會破壞周圍的組織及擴散至其他器官去，變成侵襲性的癌症。
 
-<input type="button" value="肝癌" onclick="location.href='https://jason541029.github.io/cancer4'">
+當癌瘤由原來位置擴散到身體其他部位時，這叫做繼發性癌症 (secondary cancer) 或轉移性癌症 (metastasis)</p>
 
-<input type="button" value="口腔癌" onclick="location.href='https://jason541029.github.io/cancer5'">
+			       </span>
+    <hr>
+  <h2>甚麼引起癌症</h2>
+<p>癌症的成因至今仍是個謎。儘管如此，某幾類癌症幾乎可以肯定是與我們的生活習慣有關，或受到周遭環境影響而引致的。
 
+其中幾個引致癌症的因素包括：吸煙、過度曝曬、不健康飲食、長期接觸化學品及石棉，以及其他致癌物質。
+
+同時，某幾類癌症是由病毒引起的。例如人體乳突淋瘤病毒 (HPV) 是經由性接觸而傳染的，而其中七成以上的子宮頸癌，皆由HPV引起。</p>
+	
+	<hr>
+   <h2>癌症會傳染的嗎？</h2>
+<p>不會。癌症並不會傳染，故此，與癌症患者接觸是相當安全的。</p>
+			
+    <hr>
+
+  <h2>癌症會遺傳嗎？</h2>
+  <p>家族中如有成員曾患癌症，例如乳癌或大腸癌，其患上此類癌症的風險可能會較高。在少數家庭中，控制細胞分裂的變異基因更可能一代代遺傳下去。儘管某些家庭成員的患癌風險較常人高，但並非每個人都會患上癌症。</p>
+    <hr>
+     <h2>癌症是怎樣擴散的？</h2>
+  <p>就算癌細胞增生得只如針頭一般大小，其實它已長出自己的血管，這叫做血管增生 (angiogenesis)。有時候，癌細胞會通過血液或淋巴系統等管道，去侵襲身體其他器官。當癌細胞到達新的器官時，它們可能會在那裡繼續增生，並在該處繁殖成為繼發性 (secondary) 或轉移性 (metastasis) 的腫瘤。</p>
+   
+				     
+
+  <hr>
+      <h2>相關影片</h2>
+      <embed src="這輸入影片網址" width="350" height="240" autostart=true enablecontextmenu="false"></embed>
+	</div>
+    <div id="sidebar">
+	    <h3>其他癌症連結</h3>
+	    <p>
 <input type="button" value="首頁" onclick="location.href='https://jason541029.github.io/'">
-    
-    
-    <embed src="這輸入影片網址" width="350" height="240" autostart=true enablecontextmenu="false"></embed>
+</p>
+<p>
+<input type="button" value="大腸癌" onclick="location.href='https://jason541029.github.io/cancer1'">
+</p>
+<p>
+<input type="button" value="肺癌" onclick="location.href='https://jason541029.github.io/cancer2'">
+</p>
+<p>
+<input type="button" value="乳癌" onclick="location.href='https://jason541029.github.io/cancer3'">
+</p>
+<p>
+<input type="button" value="肝癌" onclick="location.href='https://jason541029.github.io/cancer4'">
+</p>
+<p>
+<input type="button" value="口腔癌" onclick="location.href='https://jason541029.github.io/cancer5'">
+</p>
+<p><script language="javascript" class="welcomeword">var Today=new Date();document.write(  "Today is "+Today.getFullYear()+ "." + (Today.getMonth()+1) + "." + Today.getDate() );
+    </script></p>
 
+	</div>
 
-<script language="javascript" class="welcomeword">var Today=new Date();document.write(  "Today is "+Today.getFullYear()+ "." + (Today.getMonth()+1) + "." + Today.getDate() );
-    </script>
+</div>
+
+</body>
+
+</html>

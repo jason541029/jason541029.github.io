@@ -1,2 +1,33 @@
-<br>
-<font face="verdana" color="green">cancer2</font>
+<xsl:stylesheet version="1.0"
+     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+   <!-- Template rule for region element(s): -->
+   <xsl:template match="region">
+      <H1><xsl:value-of select="@year"/> Results:</H1>
+      <xsl:apply-templates/>
+   </xsl:template>
+
+   <!-- Template rule for name element(s): -->
+   <xsl:template match="name">
+          <!-- Instantiate a level-2 heading -->
+      <H2><xsl:value-of select="."/></H2>
+      <!-- Instantiate a table with heading cells. -->
+      <TABLE>
+         <TR>
+            <TH align="left">Quarter</TH>
+            <TH align="right">Qty</TH>
+         </TR>
+         <!-- For each <quarter> sibling of the <name> element,
+              instantiate a table row and two cells. Data in the cells
+              will be the values of the <quarter> element's number and
+              books_sold attributes. -->
+         <xsl:for-each select="../quarter">
+            <TR>
+               <TD align="left"><xsl:value-of select="@number"/></TD>
+               <TD align="right"><xsl:value-of select="@books_sold"/></TD>
+            </TR>
+         </xsl:for-each>
+      </TABLE>
+   </xsl:template>
+
+</xsl:stylesheet>

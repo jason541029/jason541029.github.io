@@ -1,34 +1,123 @@
-<xsl:stylesheet version="1.0"
-     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<html>
+<head>
+<title>攝護腺癌</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<style type="text/css">
+#container{
+    border:1px #666 dashed;
+    width:1000px;
+    margin:0 auto;
+	background-color:#eee;
+	border-radius:10px;
+	 box-shadow:0px 0px 9px black;
+}
+#headbox{
+	
+background:url('http://i.epochtimes.com/assets/uploads/2014/07/1402250938302483-600x400.jpg') no-repeat top;
+    width:700px;
+    height:375px;
+    border:1px #666 dashed;
+    margin:0 auto;
+    margin-top:5px;
+    margin-bottom:5px;
+	
+}
+#sidebar{
+    width:200px;
+    height:800px;
+    border:1px #666 dashed;
+    margin-left:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+    float:left;
+	border-radius:10px;
+background-color:#C0C0C0;
+	padding:5px;
+	font-family:Microsoft JhengHei;
+}
+#sidebody{
+    width:700px;
+    height:2500px;
+    border:1px #666 dashed;
+    margin-left:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+    float:left;
+	order:2px #ccc solid;
+border-radius:10px;
+background-color:#eee;
+	padding:10px;
+	font-family:Microsoft JhengHei;
+	box-shadow:0px 0px 9px black;
+}
 
-   <!-- Template rule for region element(s): -->
-   <xsl:template match="region">
-      <H1><xsl:value-of select="@year"/> Results:</H1>
-      <xsl:apply-templates/>
-   </xsl:template>
-<xsl:stylesheet version="1.0"
-xmlns:xsl="https://zh-tw.facebook.com/">
-   <!-- Template rule for name element(s): -->
-   <xsl:template match="name">
-          <!-- Instantiate a level-2 heading -->
-      <H2><xsl:value-of select="."/></H2>
-      <!-- Instantiate a table with heading cells. -->
-      <TABLE>
-         <TR>
-            <TH align="left">Quarter</TH>
-            <TH align="right">Qty</TH>
-         </TR>
-         <!-- For each <quarter> sibling of the <name> element,
-              instantiate a table row and two cells. Data in the cells
-              will be the values of the <quarter> element's number and
-              books_sold attributes. -->
-         <xsl:for-each select="../quarter">
-            <TR>
-               <TD align="left"><xsl:value-of select="@number"/></TD>
-               <TD align="right"><xsl:value-of select="@books_sold"/></TD>
-            </TR>
-         </xsl:for-each>
-      </TABLE>
-   </xsl:template>
+</style>
+<div id="container">
+    <div id="headbox"></div>
+    <div id="sidebody">
+	<h1 align="center">攝護腺癌</h1>
+    <hr>
+    <h2>症狀預兆</h2>
+<p>男性隨著年齡增長，攝護腺增生的機率就越高，早期通常沒有任何症狀，剛開始出現症狀時，可能和良性攝護腺肥大症狀差不多，包括:</p>
+<ul>
+  <li>尿急</li>
+   <li>開始排尿時排不出來</li>
+   <li>尿流變細</li>
+   <li>尿完後滴尿、尿流斷斷續續</li>
+   <li>膀胱無法排空的感覺、夜尿、血尿</li>
+   <li>當攝護腺癌侵犯貯精囊，會出現精液帶血或射精疼痛</li>
+   <li>有骨轉移時會引起骨骼疼痛、病理性骨折或脊椎受到壓迫產生神經方面症狀(部份患者癌症已擴散至別的器官時才發現)</li><br>
+    </ul>
+	    <img src="http://g.udn.com.tw/community/img/PSN_PHOTO/TPCPA/f_3678851_1.jpg">		       
+    <hr>
+  <h2>原因</h2>
+<p>攝護腺癌原因不明，可能與年齡、賀爾蒙、種族、食物和環境有關。</p>
+	
+	<hr>
+   <h2>分期</h2>
+<p>代表腫瘤的進展程度，目前常用TNM分期系統。TNM分期系統（T：腫瘤，N：淋巴結，M：轉移）或A、B、C、D共四期。</p>
+<ul>
+  <li>第一期：無法由肛門指診檢查出來，也沒有症狀，通常是因為接受治療良性肥大所切除的攝護腺組織，在顯微鏡檢發現。此期的腫瘤侷限在攝護腺內，並無擴散到攝護腺以外的器官或淋巴結。</li>
+   <li>第二期：肛門指診摸到硬結，或血液檢驗發現異常，但局限在攝護腺內。</li>
+   <li>第三期：癌症已經侵犯到攝護腺周圍的組織，包含周圍的貯精囊或鄰近膀胱的組織。</li>
+   <li>第四期：癌症已經轉移，侵犯淋巴結、骨頭或其他的器官。</li><br>
+</ul>
+<img src="http://refer.biovip.com/uploads/201411/1417248228mAaqbsUy.jpg">
+			
+    <hr>
 
-</xsl:stylesheet>
+  <h2>預防</h2>
+    <h3>定期檢查</h3>
+				     
+<ul>
+  <li>方式1.肛門指診：醫師用塗抹潤滑劑的指診手套，從肛門伸進直腸觸診。可檢查出攝護腺大小、是否有硬塊，最重要的目的是辨識有無攝護腺癌。也可以輔助罹患攝護腺癌、但PSA卻正常的患者，這是攝護腺癌不可或缺的檢查項目。 </li>
+   <li>方式2.腹部超音波：可早期發現身體各器官的病變，醫護人員用超音波振動器滑動於受檢部位，診斷裝置的影像螢幕上會出現身體裡斷層面的影像，可檢查到直腸攝護腺的部位，觀察是否有異狀。</li>
+   <li>方式3.經直腸超音波：篩檢攝護腺有效且經濟的方法，當懷疑是否有攝護腺癌時才需進行。檢查是從肛門深入超音波探頭，貼近攝護腺觀察，以評估攝護腺體積、是否有癌症侵犯，以及精準設定切片位置。 </li>
+   <li>方式4.攝護腺非特異抗原(PSA)血液篩檢：PSA值在攝護腺癌從篩檢開始到治療以及追蹤，都扮演了重要的角色。PSA由攝護腺的上皮細胞分泌，只要攝護腺有任何病狀，其數值都會上升。由於PSA上升比指診摸到硬塊的時間提早五年出現，可幫忙早期診斷攝護腺癌。</li>
+	</ul>
+  <hr>
+      <h2>相關影片</h2>
+	</div>
+    <div id="sidebar">
+	    <br><br>
+	    <h3>其他癌症連結</h3>
+	    <a href="https://jason541029.github.io/cancer1">大腸癌</a><br>
+	     <a href="https://jason541029.github.io/cancer2">肺癌</a><br>
+	     <a href="https://jason541029.github.io/cancer3">乳癌</a><br>
+	     <a href="https://jason541029.github.io/cancer4">肝癌</a><br>
+	     <a href="https://jason541029.github.io/cancer5">口腔癌</a><br>
+	     <a href="https://lilian1016.github.io/html/cancer7">胃癌</a><br>
+    <a href="https://lilian1016.github.io/html/cancer8">皮膚癌</a><br>
+    <a href="https://lilian1016.github.io/html/cancer9">甲狀腺癌</a><br>
+    <a href="https://lilian1016.github.io/html/cancer10">食道癌</a><br><br>
+<input type="button" value="回饋單"
+  onclick="location.href='https://jason541029.github.io/alert'"><br>	
+   <input type="button" value="回到首頁"
+  onclick="location.href='https://jason541029.github.io/'"><br>
+	</div>
+  
+</div>
+</body>
+</html>

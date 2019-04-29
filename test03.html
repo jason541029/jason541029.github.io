@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>  
+<html xmlns=”http://www.w3.org/1999/xhtml”>  
+<head>  
+<meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″ />  
+<title>無標題文件</title>  
+<script type=”text/javascript” src=”js/jquery-1.11.1.js”></script>  
+  
+</head>  
+  
+<body>  
+<div id=”mydiv” style=”width:100px; height:100px; background:#ddd;”>out</div>  
+</body>  
+</html>  
+  
+<script>  
+/*設定一個長按的計時器，如果點選這個圖層超過2秒則觸發，mydiv裡面的文字從out變in的動作*/  
+var timeout ;  
+   
+$(“#mydiv”).mousedown(function() {  
+    timeout = setTimeout(function() {  
+        $(“#mydiv”).text(“in”);  
+    }, 2000);  
+});  
+   
+$(“#mydiv”).mouseup(function() {  
+    clearTimeout(timeout);  
+    $(“#mydiv”).text(“out”);  
+});  
+  
+$(“#mydiv”).mouseout(function() {  
+    clearTimeout(timeout);  
+    $(“#mydiv”).text(“out”);  
+});  
+  
+</script>
